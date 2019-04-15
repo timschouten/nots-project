@@ -4,11 +4,11 @@ let y_vals = [];
 let a, b, c, d;
 let dragging = false;
 
-const learningRate = 0.2;
+const learningRate = 0.1;
 const optimizer = tf.train.adam(learningRate);
 
 function setup() {
-	createCanvas(400, 400);
+	createCanvas(1600, 800);
 	a = tf.variable(tf.scalar(random(-1, 1)));
 	b = tf.variable(tf.scalar(random(-1, 1)));
 	c = tf.variable(tf.scalar(random(-1, 1)));
@@ -37,17 +37,31 @@ function mouseClicked() {
     y_vals.push(y);
 }
 
-function draw() {
+async function draw() {
     tf.tidy(() => {
       if (x_vals.length > 0) {
         const ys = tf.tensor1d(y_vals);
         optimizer.minimize(() => loss(predict(x_vals), ys));
       }
     });
+	
+	//Begin Draw chart
+	background(255);
+	stroke(0);
+	line(0, 0, width, 0);
+	line(0, 0, 0, height);
+	line(width, 0, width, height);
+	line(0, height, width, height);
+	stroke(0);
+	strokeWeight(0.3);
+	for(let i = 0; i < 10; i++){
+		line(0, i*(height/10), width, i*(height/10));
+	}
+	for(let i = 0; i < 20; i++){
+		line(i*(width/20), 0, i*(width/20), height);
+	}
+	//End Draw chart
 
-	background(0);
-
-	stroke(255);
 	strokeWeight(8);
 	for (let i = 0; i < x_vals.length; i++) {
 		let px = map(x_vals[i], -1, 1, 0, width);
@@ -67,7 +81,7 @@ function draw() {
 
 	beginShape();
 	noFill();
-	stroke(255);
+	stroke(0);
 	strokeWeight(2);
 	for (let i = 0; i < curveX.length; i++) {
 		let x = map(curveX[i], -1, 1, 0, width);
