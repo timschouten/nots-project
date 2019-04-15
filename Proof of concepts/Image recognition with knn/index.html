@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+  </head>
+  <body>
+    <!-- Add an image that we will use to test -->
+    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+      <div>
+          <div class="uk-background-primary uk-padding uk-light">
+          <div style="font-size: 1.6em;" id="console"></div>
+            <video autoplay playsinline muted id="webcam" width=500 height=600></video>
+          </div>
+      </div>
+    </div>
+    
+    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+      <div>
+          <div class="uk-background-primary uk-padding uk-light">
+            <button id="class-a" class="uk-button uk-button-secondary">Voeg afbeelding toe aan A</button>
+          </div>
+      </div>
+      <div>
+          <div class="uk-background-primary uk-padding uk-light">
+              <button id="class-b" class="uk-button uk-button-secondary">Voeg afbeelding toe aan B</button>
+          </div>
+      </div>
+      <div>
+          <div class="uk-background-primary uk-padding uk-light">
+              <button id="class-c" class="uk-button uk-button-secondary">Voeg afbeelding toe aan C</button>
+          </div>
+      </div>
+    </div>
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+  </body>
+</html>

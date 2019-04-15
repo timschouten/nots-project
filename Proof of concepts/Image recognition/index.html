@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+  </head>
+  <body>
+    <!-- Add an image that we will use to test -->
+    <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+      <div>
+          <div class="uk-background-primary uk-padding uk-light">
+          <div id="console"></div>
+            <video autoplay playsinline muted id="webcam" width="500" height="800"></video>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+  </body>
+</html>
