@@ -6,29 +6,53 @@ function getCol(matrix, col){
 	return column;
 }
 
-var array = [[4,6], [2,1],[6,9]];
-var array2 = [[1,5,8], [4,3,2],[7,6,5]];
+var array2 = [
+	[4,6,3,4],
+	[4,2,1,3],
+	[4,6,9,3],
+	[4,6,9,3]
+];
+var array = [
+	[1,5,8,4],
+	[1,5,8,4],
+	[1,5,8,4],
+	[4,3,2,4]
+];
 //first row * first collom
 //first row * second collom
 //etc
 //second row * first collum
 //		console.log("Result " + multiplyResult + "Total " + resultNumber)
 //second row * second collum
+function ShowStepsTaken(stepsTaken) {
+	var element = document.getElementById("stepsTaken");
+	stepsTaken.forEach((step,stepIndex) => {
+		var para = document.createElement("p");
+		var node = document.createTextNode(stepIndex + ". " + step);
+		para.appendChild(node);
+		element.appendChild(para);
+	})
+}
+
 //etc
 function CalculateMatrix() {
-	var resultArray = [[], [], []];
+	var resultArray = [[], [], [], []];
+	var stepsTaken =[];
 	array.forEach((row, i) => {
-		array.forEach((item, runAmount) => {
-			var colom = getCol(array2, runAmount);
+		array.forEach((item, columIndex) => {
+			var colom = getCol(array2, columIndex);
 			var resultNumber = 0;
 			row.forEach((number, index) => {
 				resultNumber +=  number * colom[index];
+				stepsTaken.push("Equation: " + number + "*" + colom[index] + "= " + resultNumber);
 				console.log("Equation: " + number + "*" + colom[index] + "= " + resultNumber)
 			});
+			stepsTaken.push("final number : " +resultNumber);
 			resultArray[i].push(resultNumber);
 		})
 	});
 	ShowResults(resultArray)
+	ShowStepsTaken(stepsTaken);
 }
 function LoadHTMLTable(){
 	var table = document.getElementById("array1Table");

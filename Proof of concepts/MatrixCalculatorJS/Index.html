@@ -12,25 +12,28 @@
     <meta charset="UTF-8">
     <title>Matrix rekenen</title>
 </head>
-<body>
+<body style="margin: 20px">
 <script src="MatrixRekenen.js"></script>
-<h1>Hello World!</h1>
+<h1>Example of a matrix calculation</h1>
 <div class="row">
-    <div style="float: left; width: 30%; margin: 20px">
+    <div style="float: left; width: 30%; margin: 20px; text-align: center">
         <h2>Array1</h2>
         <table class="table table-striped" id="array1Table">
         </table>
     </div>
-    <div style="float: left; width: 30%; margin: 20px">
+    <div style="float: left; width: 30%; margin: 20px; text-align: center">
         <h2>Array2</h2>
         <table class="table table-striped" id="array2Table"></table>
     </div>
-    <div style="float: left; width: 30%; margin: 20px">
+    <div style="float: left; width: 30%; margin: 20px; text-align: center">
         <h2>Result</h2>
         <table class="table table-striped" id="resultsTable"></table>
     </div>
 </div>
     <button onclick="CalculateMatrix()">Show Results</button>
     <button onclick="LoadHTMLTable()">Load</button>
+<div class="container" style="max-height: 500px; overflow: scroll" id="stepsTaken">
+    <h3>Steps taken:</h3>
+</div>
 </body>
 </html>
