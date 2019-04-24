@@ -16,9 +16,11 @@
 					<h1>Matrix Calculations</h1>
 					<hr>
 					<div class="row">
-						<div class="col-2">
+						<div class="col-6">
 							<p>Matrix 1</p>
-							<table>
+							<input type="text" id="matrix1-x" value="2"/> x <input type="text" id="matrix1-y" value="2"/>
+							<br/><br/>
+							<table id="matrix1">
 								<tr>
 									<td><input type="text" id="matrix1-1"/></td>
 									<td><input type="text" id="matrix1-2"/></td>
@@ -31,7 +33,9 @@
 						</div>
 						<div class="col-6">
 							<p>Matrix 2</p>
-							<table>
+							<input type="text" id="matrix2-x" value="2"/> x <input type="text" id="matrix2-y" value="2"/>
+							<br/><br/>
+							<table id="matrix2">
 								<tr>
 									<td><input type="text" id="matrix2-1"/></td>
 									<td><input type="text" id="matrix2-2"/></td>
@@ -47,14 +51,14 @@
 					<button type="button" class="btn btn-primary" id="uitrekenen">Uitrekenen</button>
 					<br><br>
 					<p>Result</p>
-					<table>
+					<table id="result">
 						<tr>
-							<td><input type="text" id="result-1"/></td>
-							<td><input type="text" id="result-2"/></td>
+							<td><input type="text" id="result-1" disabled/></td>
+							<td><input type="text" id="result-2" disabled/></td>
 						</tr>
 						<tr>
-							<td><input type="text" id="result-3"/></td>
-							<td><input type="text" id="result-4"/></td>
+							<td><input type="text" id="result-3" disabled/></td>
+							<td><input type="text" id="result-4" disabled/></td>
 						</tr>
 					</table>
 				</div>
