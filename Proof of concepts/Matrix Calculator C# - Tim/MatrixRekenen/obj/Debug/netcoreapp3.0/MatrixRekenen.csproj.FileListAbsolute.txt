@@ -1,0 +1,12 @@
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.exe
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.deps.json
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.runtimeconfig.json
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.runtimeconfig.dev.json
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.dll
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.pdb
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.csprojAssemblyReference.cache
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.csproj.CoreCompileInputs.cache
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.AssemblyInfoInputs.cache
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.AssemblyInfo.cs
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.dll
+C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.pdb
