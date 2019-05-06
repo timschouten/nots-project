@@ -1,3 +1,7 @@
+/**OLD CLASS
+ * file kept as reference to what was tried before
+ * source = https://hackernoon.com/neural-networks-from-scratch-for-javascript-linguists-part1-the-perceptron-632a4d1fbad2
+ * */
 class Perceptron {
 	constructor(bias=1,learningRate=0.1,weights=[]) {
 		this.bias = bias;
