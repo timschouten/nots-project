@@ -47,8 +47,8 @@ class Perceptron {
  * */
 class Point {
 	constructor(){
-		this.x = Math.random() * (+500 - +0) + +0;
-		this.y = Math.random() * (+500 - +0) + +0;
+		this.x = Math.random() * (+1000 - +0) + +0;
+		this.y = Math.random() * (+1000 - +0) + +0;
 
 		if (this.x > this.y){
 			this.label = 1;
@@ -137,23 +137,10 @@ function Draw(){
 		ctx.stroke();
 		ctx.beginPath();       // Start a new path
 		ctx.moveTo(0, 0);    // Move the pen to (30, 50)
-		ctx.lineTo(500, 500);  // Draw a line to (150, 100)
+		ctx.lineTo(1000, 1000);  // Draw a line to (150, 100)
 		ctx.stroke();
 	}
 	//Draw the color of the guess whether it was correct (green) or not (red)
 	DisplayGuessCorrection(ctx);
 	UpdateDisplayText();
-}
-/** Manually train the perceptron
- * Loop through all points and use these to alter the weights
- * */
-function Train() {
-	trainingIndex++;
-	document.getElementById("trainIndex").innerHTML = "Training index = " + trainingIndex;
-	for (let i=0;i<points.length;i++){
-		const inputs2 = [points[i].x, points[i].y];
-		const target = points[i].label;
-		brain.train(inputs2, target);
-		Draw();
-	}
 }

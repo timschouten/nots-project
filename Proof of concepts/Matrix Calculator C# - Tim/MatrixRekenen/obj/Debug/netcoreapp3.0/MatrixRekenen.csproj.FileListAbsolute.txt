@@ -10,3 +10,15 @@ C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcore
 C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.AssemblyInfo.cs
 C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.dll
 C:\Users\Tim Schouten\source\repos\MatrixRekenen\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.pdb
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.exe
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.deps.json
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.runtimeconfig.json
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.runtimeconfig.dev.json
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.dll
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\bin\Debug\netcoreapp3.0\MatrixRekenen.pdb
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.csprojAssemblyReference.cache
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.AssemblyInfo.cs
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.dll
+C:\Users\HP\Documents\NOTS\nots-project\Proof of concepts\Matrix Calculator C# - Tim\MatrixRekenen\obj\Debug\netcoreapp3.0\MatrixRekenen.pdb

@@ -167,23 +167,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tim Schouten\\.nuget\\packages\\": {},
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tim Schouten\\source\\repos\\MatrixRekenen\\MatrixRekenen\\MatrixRekenen.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\NOTS\\nots-project\\Proof of concepts\\Matrix Calculator C# - Tim\\MatrixRekenen\\MatrixRekenen.csproj",
       "projectName": "MatrixRekenen",
-      "projectPath": "C:\\Users\\Tim Schouten\\source\\repos\\MatrixRekenen\\MatrixRekenen\\MatrixRekenen.csproj",
-      "packagesPath": "C:\\Users\\Tim Schouten\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tim Schouten\\source\\repos\\MatrixRekenen\\MatrixRekenen\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Documents\\NOTS\\nots-project\\Proof of concepts\\Matrix Calculator C# - Tim\\MatrixRekenen\\MatrixRekenen.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\NOTS\\nots-project\\Proof of concepts\\Matrix Calculator C# - Tim\\MatrixRekenen\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tim Schouten\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

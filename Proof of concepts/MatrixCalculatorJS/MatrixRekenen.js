@@ -9,14 +9,12 @@ function getCol(matrix, col){
 var array2 = [
 	[4,6,3,4],
 	[4,2,1,3],
-	[4,6,9,3],
 	[4,6,9,3]
 ];
 var array = [
-	[1,5,8,4],
-	[1,5,8,4],
-	[1,5,8,4],
-	[4,3,2,4]
+	[1,5,8],
+	[1,5,8],
+	[1,5,8],
 ];
 //first row * first collom
 //first row * second collom
