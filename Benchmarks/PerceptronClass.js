@@ -1,10 +1,13 @@
+//y=mx + b
+const screenHeight = 1000;
+const screenWidth = 1000;
 /** Perceptron Class
  * generates random weights and bias to begin with
- * activator function to see whether it is above the line or below
+ * activator function to see whether it is above the Formula or below
  * train method that alters the weights where needed*/
 class Perceptron {
 	constructor() {
-		this.weights = Perceptron.generateWeights(2);
+		this.weights = Perceptron.generateWeights(3);
 		this.LR = 0.1; // learning rate
 	}
 
@@ -32,43 +35,62 @@ class Perceptron {
 		}
 		return Perceptron.ActivatorFunction(sum);
 	}
+// tune all the weights
 	train(inputs, target){
 		const guess = this.guess(inputs);
 		const err = target - guess;
-		// tune all the weights
 		for(let i=0; i<this.weights.length; i++){
 			this.weights[i] += err * inputs[i] * this.LR;
 		}
 	}
+
+	guessY(x) {
+// var m = this.weights[1] / this.weights[2];
+		// var b = this.weights[2];
+		// return m*x+b;
+		return -(this.weights[2]/this.weights[1]) - (this.weights[0]/this.weights[1]) * x;
+	}
 }
 /** Point Class
  * Initializes an point to place on screen with random values (Not bigger than canvas)
- * Label = Whether the point is above the line or below
+ * Label = Whether the point is above the Formula or below
  * */
 class Point {
 	constructor(){
 		this.x = Math.random() * (+1000 - +0) + +0;
 		this.y = Math.random() * (+1000 - +0) + +0;
+		this.lineY = Formula(this.x);
 
-		if (this.x > this.y){
+		this.bias = 1;
+		if (this.y > this.lineY){
 			this.label = 1;
 		}else{
 			this.label = -1;
 		}
 	}
+	setX(x){
+		this.x = x;
+	}
+	setY(y){
+		this.y=y
+	}
 }
-
 /** Generate perceptron and random points*/
 const brain = new Perceptron();
 const points = [];
-for (let i = 0; i<100; i++) {
+for (let i = 0; i<200; i++) {
 	points.push(new Point())
 }
 let trainIndex = 0;
 let trainingIndex = 0;
 let redCount = 0;
 let finalCount = 0;
-
+/**
+ * @return {number}
+ */
+function Formula(x){
+	return 5*x + 2
+}
 /** Function that triggers the automatic learning process */
 function StartDrawing() {
 	setInterval(Draw, 1000)
@@ -88,12 +110,12 @@ function UpdateDisplayText() {
  * */
 function DisplayGuessCorrection(ctx) {
 	for (let i = 0; i < points.length; i++) {
-		const inputs2 = [points[i].x, points[i].y];
+		const inputs2 = [points[i].x, points[i].y, points[i].bias];
 		let target = points[i].label;
 		const guess = brain.guess(inputs2);
 		const object = points[i];
 		ctx.beginPath();
-		ctx.arc(object.x, object.y, 2, 0, 2 * Math.PI);
+		ctx.arc(object.x, object.y, 6, 0, 2 * Math.PI);
 		if (guess === target) ctx.fillStyle = "green";
 		else {
 			ctx.fillStyle = "red";
@@ -105,7 +127,7 @@ function DisplayGuessCorrection(ctx) {
 		 * Increase training index
 		 * */
 		const training = points[trainingIndex];
-		const inputs = [training.x, training.y];
+		const inputs = [training.x, training.y, training.bias];
 		target = training.label;
 		brain.train(inputs, target);
 		trainingIndex++;
@@ -113,6 +135,24 @@ function DisplayGuessCorrection(ctx) {
 			trainingIndex = 0;
 		}
 	}
+}
+
+function DrawSeperationLines(ctx) {
+	var beginLine = new Point()
+	beginLine.setX(0);
+	beginLine.setY(brain.guessY(0));
+	var endLine = new Point()
+	endLine.setX(screenHeight);
+	endLine.setY(brain.guessY(screenHeight));
+	ctx.beginPath();
+	ctx.fillStyle = "red";
+	ctx.moveTo(0, Formula(0));    // Move the pen to (30, 50)
+	ctx.lineTo(1000, Formula(1000));  // Draw a Formula to (150, 100)
+	ctx.stroke();
+	ctx.beginPath();       // Start a new path
+	ctx.moveTo(beginLine.x, beginLine.y);    // Move the pen to (30, 50)
+	ctx.lineTo(endLine.x, endLine.y);  // Draw a Formula to (150, 100)
+	ctx.stroke();
 }
 
 /** Draws the points on screen with color representing if its guessed correct or not */
@@ -130,17 +170,13 @@ function Draw(){
 	for (let i=0; i<points.length; i++){
 		const object = points[i];
 		ctx.beginPath();
-		ctx.arc(object.x, object.y, 5, 0,2 * Math.PI);
+		ctx.arc(object.x, object.y, 10, 0,2 * Math.PI);
 		if (object.label === 1){
 			ctx.fill();
 		}
 		ctx.stroke();
-		ctx.beginPath();       // Start a new path
-		ctx.moveTo(0, 0);    // Move the pen to (30, 50)
-		ctx.lineTo(1000, 1000);  // Draw a line to (150, 100)
-		ctx.stroke();
 	}
-	//Draw the color of the guess whether it was correct (green) or not (red)
+	DrawSeperationLines(ctx);
 	DisplayGuessCorrection(ctx);
 	UpdateDisplayText();
 }

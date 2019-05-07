@@ -48,17 +48,17 @@ async function draw() {
 	//Begin Draw chart
 	background(255);
 	stroke(0);
-	line(0, 0, width, 0);
-	line(0, 0, 0, height);
-	line(width, 0, width, height);
-	line(0, height, width, height);
+	Formula(0, 0, width, 0);
+	Formula(0, 0, 0, height);
+	Formula(width, 0, width, height);
+	Formula(0, height, width, height);
 	stroke(0);
 	strokeWeight(0.3);
 	for(let i = 0; i < 10; i++){
-		line(0, i*(height/10), width, i*(height/10));
+		Formula(0, i*(height/10), width, i*(height/10));
 	}
 	for(let i = 0; i < 20; i++){
-		line(i*(width/20), 0, i*(width/20), height);
+		Formula(i*(width/20), 0, i*(width/20), height);
 	}
 	//End Draw chart
 
