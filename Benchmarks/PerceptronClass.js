@@ -70,6 +70,7 @@ class Point {
 	}
 	setX(x){
 		this.x = x;
+		this.lineY = Formula(this.x);
 	}
 	setY(y){
 		this.y=y
@@ -77,20 +78,20 @@ class Point {
 }
 /** Generate perceptron and random points*/
 const brain = new Perceptron();
-const points = [];
+let points = [];
 for (let i = 0; i<200; i++) {
 	points.push(new Point())
 }
 let trainIndex = 0;
 let trainingIndex = 0;
 let redCount = 0;
-let finalCount = 0;
 /**
  * @return {number}
  */
 function Formula(x){
 	return 5*x + 2
 }
+let finalCount = 0;
 /** Function that triggers the automatic learning process */
 function StartDrawing() {
 	setInterval(Draw, 1000)

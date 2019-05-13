@@ -2,7 +2,7 @@
  * file kept as reference to what was tried before
  * source = https://hackernoon.com/neural-networks-from-scratch-for-javascript-linguists-part1-the-perceptron-632a4d1fbad2
  * */
-class Perceptron {
+class PerceptronOLD {
 	constructor(bias=1,learningRate=0.1,weights=[]) {
 		this.bias = bias;
 		this.learningRate = learningRate;
@@ -49,7 +49,7 @@ class Perceptron {
 
 function showResults() {
 	var element = document.getElementById("result")
-	const p1 = new Perceptron();
+	const p1 = new PerceptronOLD();
 	var input = [1,1,1,1,1,1,1,1,1];
 	p1.init(input);
 	p1.adjustWeights(input);

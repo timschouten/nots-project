@@ -12,11 +12,12 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <meta charset="UTF-8" />
-    <title>Matrix rekenen</title>
+      <script src="PerceptronClass.js"></script>
+      <meta charset="UTF-8" />
+      <title>Matrix rekenen</title>
   </head>
   <body style="margin: 20px">
-    <script src="PerceptronClass.js"></script>
+  <input type="file" id="csvFile" onclick="ReadData()" content="Load File">
       <div style=" width:1000px; height: 500px; text-align: center">
         <canvas width="1000" height="1000" id="result"></canvas>
       </div>
