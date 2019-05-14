@@ -6,25 +6,23 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
-
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-      <script src="PerceptronClass.js"></script>
       <meta charset="UTF-8" />
-      <title>Matrix rekenen</title>
+    <title>Matrix rekenen</title>
   </head>
   <body style="margin: 20px">
-  <input type="file" id="csvFile" onclick="ReadData()" content="Load File">
-      <div style=" width:1000px; height: 500px; text-align: center">
-        <canvas width="1000" height="1000" id="result"></canvas>
-      </div>
-    </div>
-    <button onclick="Draw()">Show first results</button>
-    <button onclick="StartDrawing()">StartLearning</button>
-    <button onclick="Draw()">Train</button>
-    <p id="trainIndex"></p>
+  <input type="button" onclick="ReadData()" value="read">
+  <input type="file" id="csvFile" content="Load File">
+  <canvas id="result" width="1000" height="1000"></canvas>
+  <button onclick="Draw()">Show first results</button>
+  <button onclick="StartDrawing()">StartLearning</button>
+  <button onclick="Draw()">Train</button>
+  <p id="trainIndex"></p>
   </body>
+  <script src="PerceptronClass.js"></script>
 </html>
