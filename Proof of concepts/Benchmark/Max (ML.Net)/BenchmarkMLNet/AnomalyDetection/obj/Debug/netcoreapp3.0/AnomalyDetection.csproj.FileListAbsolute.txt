@@ -1,0 +1,5 @@
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\AnomalyDetection\bin\Debug\netcoreapp3.0\AnomalyDetection.exe
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\AnomalyDetection\obj\Debug\netcoreapp3.0\AnomalyDetection.csprojAssemblyReference.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\AnomalyDetection\obj\Debug\netcoreapp3.0\AnomalyDetection.csproj.CoreCompileInputs.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\AnomalyDetection\obj\Debug\netcoreapp3.0\AnomalyDetection.AssemblyInfoInputs.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\AnomalyDetection\obj\Debug\netcoreapp3.0\AnomalyDetection.AssemblyInfo.cs

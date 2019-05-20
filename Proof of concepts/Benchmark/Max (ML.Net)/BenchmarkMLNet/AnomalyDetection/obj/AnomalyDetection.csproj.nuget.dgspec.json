@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MaxSchulz\\Dropbox\\han\\NotS\\Project\\BenchmarkMLNet\\AnomalyDetection\\AnomalyDetection.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MaxSchulz\\Dropbox\\han\\NotS\\Project\\BenchmarkMLNet\\AnomalyDetection\\AnomalyDetection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MaxSchulz\\Dropbox\\han\\NotS\\Project\\BenchmarkMLNet\\AnomalyDetection\\AnomalyDetection.csproj",
+        "projectName": "AnomalyDetection",
+        "projectPath": "C:\\Users\\MaxSchulz\\Dropbox\\han\\NotS\\Project\\BenchmarkMLNet\\AnomalyDetection\\AnomalyDetection.csproj",
+        "packagesPath": "C:\\Users\\MaxSchulz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MaxSchulz\\Dropbox\\han\\NotS\\Project\\BenchmarkMLNet\\AnomalyDetection\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MaxSchulz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Microsoft.NETCore.Platforms": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview3.19128.7, )",
+              "autoReferenced": true
+            },
+            "Microsoft.WindowsDesktop.App": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview3-27504-2, )",
+              "autoReferenced": true
+            },
+            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview3-27503-5, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
