@@ -22,8 +22,10 @@ namespace BenchmarkMLNet
             TrainTestData splitDataView = LoadData(mlContext);
             ITransformer model = BuildAndTrainModel(mlContext, splitDataView.TrainSet);
             Evaluate(mlContext, model, splitDataView.TestSet);
+
             UseModelWithSingleItem(mlContext, model);
-            UseModelWithBatchItems(mlContext, model);
+            
+            //UseModelWithBatchItems(mlContext, model);
         }
 
         /// <summary>
@@ -77,13 +79,13 @@ namespace BenchmarkMLNet
             IDataView predictions = model.Transform(splitTestSet);
             CalibratedBinaryClassificationMetrics metrics = mlContext.BinaryClassification.Evaluate(predictions, "Label");
 
-            Console.WriteLine();
-            Console.WriteLine("Model quality metrics evaluation");
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine($"Accuracy: {metrics.Accuracy:P2}");
-            Console.WriteLine($"Auc: {metrics.AreaUnderRocCurve:P2}");
-            Console.WriteLine($"F1Score: {metrics.F1Score:P2}");
-            Console.WriteLine("=============== End of model evaluation ===============");
+            //Console.WriteLine();
+            //Console.WriteLine("Model quality metrics evaluation");
+            //Console.WriteLine("--------------------------------");
+            //Console.WriteLine($"Accuracy: {metrics.Accuracy:P2}");
+            //Console.WriteLine($"Auc: {metrics.AreaUnderRocCurve:P2}");
+            //Console.WriteLine($"F1Score: {metrics.F1Score:P2}");
+            //Console.WriteLine("=============== End of model evaluation ===============");
         }
 
         /**
@@ -97,16 +99,17 @@ namespace BenchmarkMLNet
             PredictionEngine<SentimentData, SentimentPrediction> predictionFunction = mlContext.Model.CreatePredictionEngine<SentimentData, SentimentPrediction>(model);
             SentimentData sampleStatement = new SentimentData
             {
-                SentimentText = "This was a very bad steak"
-            };
+                SentimentText = "This was a very bad steak",
+                testNumber = 1
+            };      
             var resultprediction = predictionFunction.Predict(sampleStatement);
 
             Console.WriteLine();
             Console.WriteLine("=============== Prediction Test of model with a single sample and test dataset ===============");
-
+            
             Console.WriteLine();
             Console.WriteLine($"Sentiment: {resultprediction.SentimentText} | Prediction: {(Convert.ToBoolean(resultprediction.Prediction) ? "Positive" : "Negative")} | Probability: {resultprediction.Probability} ");
-
+            
             Console.WriteLine("=============== End of Predictions ===============");
             Console.WriteLine();
         }
@@ -116,7 +119,7 @@ namespace BenchmarkMLNet
         /// </summary>
         /// <param name="mlContext"></param>
         /// <param name="model"></param>
-        public static void UseModelWithBatchItems(MLContext mlContext, ITransformer model)
+        /*public static void UseModelWithBatchItems(MLContext mlContext, ITransformer model)
         {
             IEnumerable<SentimentData> sentiments = new[]
             {
@@ -153,6 +156,6 @@ namespace BenchmarkMLNet
                 Console.WriteLine($"Sentiment: {prediction.SentimentText} | Prediction: {(Convert.ToBoolean(prediction.Prediction) ? "Positive" : "Negative")} | Probability: {prediction.Probability} ");
             }
             Console.WriteLine("=============== End of predictions ===============");
-        }
+        }*/
     }
 }
