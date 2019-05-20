@@ -42,7 +42,7 @@ async function setup() {
 
   const hidden = tf.layers.dense({ // hidden layer / dense layer = all neurons are connected with neurons in previous/next layer
     units: 4, // neurons
-    inputShape: [2], // input shape of previous layer, previous layer is the input layer
+    inputShape: [1], // input shape of previous layer, previous layer is the input layer
     activation: 'sigmoid' // activation function
   });
   const output = tf.layers.dense({ // output layer /
@@ -59,9 +59,9 @@ async function setup() {
   });
 
   const xs = tf.tensor2d([ // training data
-    [0.0, 0.0],
-    [0.5, 0.5],
-    [1, 1]
+    [0.0],
+    [0.5],
+    [1]
   ]);
 
   const ys = tf.tensor2d([ // test data
@@ -82,4 +82,8 @@ async function setup() {
 
   const outputs = model.predict(xs); // predict output with inputs tensor
   outputs.print(); // print output
+
+  model.predict(tf.tensor2d([ // training data
+    [0.7]
+  ])).print(); // predict output with inputs tensor  // todo: dit nog testen
 }
