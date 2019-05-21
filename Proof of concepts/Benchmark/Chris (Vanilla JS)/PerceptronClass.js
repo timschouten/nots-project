@@ -135,7 +135,7 @@ function DisplayGuessCorrection(ctx) {
 		const guess = brain.guess(inputs2);
 		const object = points[i];
 		ctx.beginPath();
-		ctx.arc(object.x, object.y, 6, 0, 2 * Math.PI);
+		ctx.arc(object.x, brain.guessY(object.x), 6, 0, 2 * Math.PI);
 		if (guess === target) ctx.fillStyle = "green";
 		else {
 			ctx.fillStyle = "red";
@@ -189,7 +189,7 @@ function Draw() {
 	for (let i = 0; i < points.length; i++) {
 		const object = points[i];
 		ctx.beginPath();
-		ctx.arc(object.x, object.y, 10, 0, 2 * Math.PI);
+		ctx.arc(object.x, brain.guessY(object.x), 10, 0, 2 * Math.PI);
 		if (object.label === 1) {
 			ctx.fill();
 		}

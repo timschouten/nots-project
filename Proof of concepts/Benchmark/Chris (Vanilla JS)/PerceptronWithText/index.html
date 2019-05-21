@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8" />
+    <script src="Perceptron.js"></script>
+    <title>Matrix rekenen</title>
+</head>
+<body style="margin: 20px">
+<input type="button" onclick="ReadData()" value="read">
+<input type="button" onclick="TrainPerceptron()" value="Train">
+<input type="button" onclick="MakePrediction()" value="Predict">
+<input type="file" id="csvFile" content="Load File">
+<div id="poorWords" style="width: 40%; float: right;">
+    <h3>Words and their values</h3>
+</div>
+<p id="trainIndex"></p>
+</body>
+<script src="index.js"></script>
+</html>
