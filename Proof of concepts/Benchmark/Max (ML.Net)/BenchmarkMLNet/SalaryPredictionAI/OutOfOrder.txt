@@ -1,0 +1,113 @@
+﻿static readonly string _dataPath = Path.Combine("C:/Users/MaxSchulz/Dropbox/han/NotS/Project/BenchmarkMLNet/SalaryPredictionAI", "Data", "adult.txt");
+static readonly string _trainDataPath = Path.Combine("C:/Users/MaxSchulz/Dropbox/han/NotS/Project/BenchmarkMLNet/SalaryPredictionAI", "Data", "TrainingData.txt");
+
+-------------------------------------------------------------------------------------------------------------------        
+
+
+private void Btn_Submit_Click(object sender, RoutedEventArgs e)
+{
+    DataObject newCalculation =
+        new DataObject(
+            txt_Age.Text,
+            txt_WorkClass.Text,
+            txt_Fnlwgt.Text,
+            txt_Education.Text,
+            txt_EducationNum.Text,
+            txt_MaritalStatus.Text,
+            txt_Occupation.Text,
+            txt_Relationship.Text,
+            txt_Race.Text,
+            txt_Sex.Text,
+            txt_CapitalGain.Text,
+            txt_CapitalLoss.Text,
+            txt_HoursPerWeek.Text,
+            txt_NativeCountry.Text
+        );
+            
+    MLContext mlContext = new MLContext();
+    /*TrainTestData splitDataView = LoadData(mlContext);
+    ITransformer model = BuildAndTrainModel(mlContext, splitDataView.TrainSet);
+    Evaluate(mlContext, model, splitDataView.TestSet);
+
+    UseModelWithSingleItem(mlContext, model, newCalculation);*/
+
+    IDataView trainingDataView = LoadData(mlContext).training;
+    IDataView testDataView = LoadData(mlContext).test;
+}
+
+public (IDataView training, IDataView test) LoadData(MLContext mlContext)
+{
+    IDataView dataView = mlContext.Data.LoadFromTextFile<DataObject>(_dataPath, hasHeader: false, separatorChar: ',');
+    IDataView testDataView = mlContext.Data.LoadFromTextFile<DataObject>(_trainDataPath, hasHeader: true, separatorChar: ',');
+    // 0.2 stands for the percentage of the ammount of trainingdata in this case 20%
+    //TrainTestData splitDataView = mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
+    //return splitDataView;
+    return (dataView, testDataView);
+}
+
+public ITransformer BuildAndTrainModel(MLContext mlContext, IDataView splitTrainSet)
+{
+    /*var estimator = mlContext.Transforms.Concatenate("Features", "Age", "Workclass", "Fnlwgt", "Education", "EducationNum", "MaritalStatus", 
+    "Occupation", "Relationship", "Race", "Sex", "CapitalGain", "CapitalLoss", "HoursPerWeek", "NativeCountry")
+        .Append(mlContext.Transforms.NormalizeMinMax("Features"));
+
+    var model = estimator.Fit(splitTrainSet);*/
+
+    IEstimator<ITransformer> estimator = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName: "userIdEncoded", inputColumnName: "userId")
+        .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName: "movieIdEncoded", inputColumnName: "movieId"));
+
+    var options = new MatrixFactorizationTrainer.Options
+    {
+        MatrixColumnIndexColumnName = "userIdEncoded",
+        MatrixRowIndexColumnName = "movieIdEncoded",
+        LabelColumnName = "Label",
+        NumberOfIterations = 20,
+        ApproximationRank = 100
+    };
+
+    var trainerEstimator = estimator.Append(mlContext.Recommendation().Trainers.MatrixFactorization(options));
+
+    return model;
+}
+
+public void Evaluate(MLContext mlContext, ITransformer model, IDataView splitTestSet)
+{
+    Console.WriteLine("=============== Evaluating Model accuracy with Test data===============");
+    IDataView predictions = model.Transform(splitTestSet);
+    CalibratedBinaryClassificationMetrics metrics = mlContext.BinaryClassification.Evaluate(predictions, "Label");
+}
+
+private void UseModelWithSingleItem(MLContext mlContext, ITransformer model, DataObject dataObject)
+{
+    PredictionEngine<DataObject, SentimentPrediction> predictionFunction = mlContext.Model.CreatePredictionEngine<DataObject, SentimentPrediction>(model);
+    DataObject sampleStatement = new DataObject(
+        dataObject.Age,
+        dataObject.Workclass,
+        dataObject.Fnlwgt,
+        dataObject.Education,
+        dataObject.EducationNum,
+        dataObject.MaritalStatus,
+        dataObject.Occupation,
+        dataObject.Relationship,
+        dataObject.Race,
+        dataObject.Sex,
+        dataObject.CapitalGain,
+        dataObject.CapitalLoss,
+        dataObject.HoursPerWeek,
+        dataObject.NativeCountry
+    );
+    var resultprediction = predictionFunction.Predict(sampleStatement);
+
+    string result = resultprediction.Prediction.ToString() + resultprediction.Score + resultprediction.Probability;
+
+    lbl_Money.Content = result;
+
+    //Console.WriteLine();
+    //Console.WriteLine("=============== Prediction Test of model with a single sample and test dataset ===============");
+    //
+    //Console.WriteLine();
+    //Console.WriteLine($"Sentiment: {resultprediction.SentimentText} | Prediction: {(Convert.ToBoolean(resultprediction.Prediction) ? "Positive" : "Negative")} | Probability: {resultprediction.Probability} ");
+    //
+    //Console.WriteLine("=============== End of Predictions ===============");
+    //Console.WriteLine();
+}

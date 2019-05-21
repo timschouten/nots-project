@@ -1,0 +1,15 @@
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\bin\Debug\SalaryPredictionAI.exe.config
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\bin\Debug\SalaryPredictionAI.exe
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\bin\Debug\SalaryPredictionAI.pdb
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.csprojAssemblyReference.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\MainWindow.g.cs
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\App.g.cs
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI_MarkupCompile.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI_MarkupCompile.lref
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\MainWindow.baml
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.g.resources
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.Properties.Resources.resources
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.csproj.GenerateResource.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.csproj.CoreCompileInputs.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.exe
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\SalaryPredictionAI\obj\Debug\SalaryPredictionAI.pdb

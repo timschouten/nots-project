@@ -141,7 +141,16 @@
           "lib/netstandard2.0/Microsoft.ML.DataView.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.0.0-preview3.19128.7": {
+      "Microsoft.NETCore.App.Host.win-x86/3.0.0-preview5-27626-15": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-x86/native/_._": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -150,7 +159,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.Targets/2.0.0": {
+      "Microsoft.NETCore.Targets/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -168,19 +177,6 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
-        }
-      },
-      "Microsoft.WindowsDesktop.App/3.0.0-preview3-27504-2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "Microsoft.NETCore.Targets": "2.0.0"
-        },
-        "compile": {
-          "ref/netcoreapp3.0/_._": {}
-        },
-        "build": {
-          "build/netcoreapp3.0/_._": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -417,15 +413,6 @@
           "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
-          }
-        }
-      },
-      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview3-27503-5": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/win-x64/native/_._": {
-            "assetType": "native",
-            "rid": "win-x64"
           }
         }
       },
@@ -1699,38 +1686,54 @@
         "microsoft.ml.dataview.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.0.0-preview3.19128.7": {
-      "sha512": "4/k52fBHvM1RNPoBMik0Y3wIovsUGaTadNGH75iLGjQCJPRq2UBivEkhYrYkIFnu+K9kTYJcmXCDF6SFzMBrqA==",
+    "Microsoft.NETCore.App.Host.win-x86/3.0.0-preview5-27626-15": {
+      "sha512": "0i58ycHGCUBkkNUB4ACcR6vLsUySGQZQmsCfcDLJ3dkt8exKlB2YHli63I9kwK6H7zeIJZ/bM041mT+bH5nkIg==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.0.0-preview3.19128.7",
+      "path": "microsoft.netcore.app.host.win-x86/3.0.0-preview5-27626-15",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "microsoft.netcore.app.host.win-x86.3.0.0-preview5-27626-15.nupkg.sha512",
+        "microsoft.netcore.app.host.win-x86.nuspec",
+        "runtimes/win-x86/native/apphost.exe",
+        "runtimes/win-x86/native/comhost.dll",
+        "runtimes/win-x86/native/ijwhost.dll",
+        "runtimes/win-x86/native/ijwhost.lib",
+        "version.txt"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "sha512": "MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.0.0-preview3.19128.7.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-    "Microsoft.NETCore.Targets/2.0.0": {
-      "sha512": "odP/tJj1z6GylFpNo7pMtbd/xQgTC3Ex2If63dRTL38bBNMwsBnJ+RceUIyHdRBC0oik/3NehYT+oECwBhIM3Q==",
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "type": "package",
-      "path": "microsoft.netcore.targets/2.0.0",
+      "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.2.0.0.nupkg.sha512",
+        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
-        "runtime.json",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "runtime.json"
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
@@ -1769,69 +1772,6 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
-      ]
-    },
-    "Microsoft.WindowsDesktop.App/3.0.0-preview3-27504-2": {
-      "sha512": "t7Iw6nkx03aOXgZ7L2ZJLN7hGY7FlUaxIyH6UbGhjHCJABxfV8Bx3xOe6E63xa1HVeoccCAdNPctTX2s2zj5SQ==",
-      "type": "package",
-      "path": "microsoft.windowsdesktop.app/3.0.0-preview3-27504-2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "build/netcoreapp3.0/Microsoft.WindowsDesktop.App.targets",
-        "build/netcoreapp3.0/ref-mscorlib/System.ComponentModel.dll",
-        "build/netcoreapp3.0/ref-mscorlib/System.Runtime.CompilerServices.VisualC.dll",
-        "build/netcoreapp3.0/ref-mscorlib/System.Runtime.dll",
-        "build/netcoreapp3.0/ref-mscorlib/mscorlib.dll",
-        "microsoft.windowsdesktop.app.3.0.0-preview3-27504-2.nupkg.sha512",
-        "microsoft.windowsdesktop.app.nuspec",
-        "ref/netcoreapp3.0/Accessibility.dll",
-        "ref/netcoreapp3.0/Microsoft.Win32.Registry.dll",
-        "ref/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
-        "ref/netcoreapp3.0/PresentationCore-CommonResources.dll",
-        "ref/netcoreapp3.0/PresentationCore.dll",
-        "ref/netcoreapp3.0/PresentationFramework.Aero.dll",
-        "ref/netcoreapp3.0/PresentationFramework.Aero2.dll",
-        "ref/netcoreapp3.0/PresentationFramework.AeroLite.dll",
-        "ref/netcoreapp3.0/PresentationFramework.Classic.dll",
-        "ref/netcoreapp3.0/PresentationFramework.Luna.dll",
-        "ref/netcoreapp3.0/PresentationFramework.Royale.dll",
-        "ref/netcoreapp3.0/PresentationFramework.dll",
-        "ref/netcoreapp3.0/PresentationUI.dll",
-        "ref/netcoreapp3.0/ReachFramework.dll",
-        "ref/netcoreapp3.0/System.CodeDom.dll",
-        "ref/netcoreapp3.0/System.Configuration.ConfigurationManager.dll",
-        "ref/netcoreapp3.0/System.Design.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Design.dll",
-        "ref/netcoreapp3.0/System.Drawing.dll",
-        "ref/netcoreapp3.0/System.Printing.dll",
-        "ref/netcoreapp3.0/System.Security.AccessControl.dll",
-        "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll",
-        "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll",
-        "ref/netcoreapp3.0/System.Security.Cryptography.ProtectedData.dll",
-        "ref/netcoreapp3.0/System.Security.Cryptography.Xml.dll",
-        "ref/netcoreapp3.0/System.Security.Permissions.dll",
-        "ref/netcoreapp3.0/System.Security.Principal.Windows.dll",
-        "ref/netcoreapp3.0/System.Windows.Controls.Ribbon.dll",
-        "ref/netcoreapp3.0/System.Windows.Extensions.dll",
-        "ref/netcoreapp3.0/System.Windows.Forms.Design.Editors.dll",
-        "ref/netcoreapp3.0/System.Windows.Forms.Design.dll",
-        "ref/netcoreapp3.0/System.Windows.Forms.dll",
-        "ref/netcoreapp3.0/System.Windows.Input.Manipulations.dll",
-        "ref/netcoreapp3.0/System.Windows.Presentation.dll",
-        "ref/netcoreapp3.0/System.Xaml.dll",
-        "ref/netcoreapp3.0/UIAutomationClient.dll",
-        "ref/netcoreapp3.0/UIAutomationClientSideProviders.dll",
-        "ref/netcoreapp3.0/UIAutomationProvider.dll",
-        "ref/netcoreapp3.0/UIAutomationTypes.dll",
-        "ref/netcoreapp3.0/WindowsBase.dll",
-        "ref/netcoreapp3.0/WindowsFormsIntegration.dll",
-        "runtime.json",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -1920,7 +1860,7 @@
       ]
     },
     "runtime.native.System/4.3.0": {
-      "sha512": "c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
+      "sha512": "x54z6bTuWjCFssinmwdfKIOchuPOzUOs5noB7lFRBsX0NBRjHrkespw5L6+TsNUgMlTynDwX7HfPYyzr7jnETw==",
       "type": "package",
       "path": "runtime.native.system/4.3.0",
       "files": [
@@ -1947,7 +1887,7 @@
       ]
     },
     "runtime.native.System.Net.Http/4.3.0": {
-      "sha512": "ZVuZJqnnegJhd2k/PtAbbIcZ3aZeITq3sj06oKfMBSfphW3HDmk/t4ObvbOk/JA/swGR0LNqMksAh/f7gpTROg==",
+      "sha512": "W6p0aRgi1o328OFyENQfnPdchczztVeVMNUC2bHMLi9oLuIyHtryFB1SYd5apTUNNFw6uolLB2LzDb0hg/hECA==",
       "type": "package",
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
@@ -1960,7 +1900,7 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "DloMk88juo0OuOWr56QG7MNchmafTLYWvABy36izkrLI5VledI0rq28KGs1i9wbpeT9NPQrx/wTf8U2vazqQ3Q==",
+      "sha512": "8UhGPGwnD+VCoVHfR0GajRYSkZoGE+zrteUKitxhIblr6RL+coltCx4T2Csp6nEzZyCy7RulnOWsMtzBI8VI9Q==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -2015,7 +1955,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "P8p9AQUtawAJrFHMVjTmxwPUtPg9F78lXWl4c1XUdwepNkpQY0YsOFMMtCZx27Q1fm5R9rXcG4bAHZnfj5oHww==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -2095,22 +2035,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview3-27503-5": {
-      "sha512": "9xq1NTCrWg3A4/6K/COActt25NJaw1a6bx0CTIkgbYv2TkpveKXZCCSFyDnT5Ff9nBvZkBq4Y4r/tZNIU5T8pg==",
-      "type": "package",
-      "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/3.0.0-preview3-27503-5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.win-x64.microsoft.netcore.dotnetapphost.3.0.0-preview3-27503-5.nupkg.sha512",
-        "runtime.win-x64.microsoft.netcore.dotnetapphost.nuspec",
-        "runtimes/win-x64/native/apphost.exe",
-        "runtimes/win-x64/native/comhost.dll",
-        "version.txt"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -2440,7 +2364,7 @@
       ]
     },
     "System.ComponentModel/4.3.0": {
-      "sha512": "VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "sha512": "eBfSDtmmUvCHWaveUlQt8jLOyL34jexFh11q8FGOThz8Mc29B/5tK5tTAySYVS+ydjNKk5km0OVCk/jsowkQ3w==",
       "type": "package",
       "path": "system.componentmodel/4.3.0",
       "files": [
@@ -3041,7 +2965,7 @@
       ]
     },
     "System.Globalization.Extensions/4.3.0": {
-      "sha512": "FhKmdR6MPG+pxow6wGtNAWdZh7noIOpdD5TwQ3CprzgIE1bBBoim0vbR1+AWsWjQmU7zXHgQo4TWSP6lCeiWcQ==",
+      "sha512": "JTjrZornS2AMCMUbm/eL4mP2RXIZqcFWq6Kst9HB4msI7QOYj7n4qgDkA7SBi94CbQWnXxSPMSig0AHLzggCbA==",
       "type": "package",
       "path": "system.globalization.extensions/4.3.0",
       "files": [
@@ -3880,7 +3804,7 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+      "sha512": "CY1o601POCb36gGFggW7pH5ulBp7GPp3YWXmKuU8Tx4dNGoriO6NMjT/IgElaC7XYl5RX1BWA0HbU3GpH29dIg==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
@@ -4797,7 +4721,7 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.3.0": {
-      "sha512": "X4s/FCkEUnRGnwR3aSfVIkldBmtURMhmexALNTwpjklzxWU7yjMk7GHLKOZTNkgnWnE0q7+BCf9N2LVRWxewaA==",
+      "sha512": "uT+huqFdCVtcBBT9iuRw9/8mqRga6r3UsgjYh2yEywkNa6QXac0WEOZQ7Nn2kMuUQbIC4dSKIcXL+ddKTtXfwg==",
       "type": "package",
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
@@ -4869,7 +4793,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
+      "sha512": "MdxS5U2f8M5no9KrMPr+127EAHdfZVvOP4IclT1Tgvtdg88MB/rN8n2cDhKZkIuzQoPVDvQW9/Lpji9KxYwgdA==",
       "type": "package",
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
@@ -5609,9 +5533,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.ML >= 1.0.0",
-      "Microsoft.NETCore.Platforms >= 3.0.0-preview3.19128.7",
-      "Microsoft.WindowsDesktop.App >= 3.0.0-preview3-27504-2",
-      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost >= 3.0.0-preview3-27503-5"
+      "Microsoft.NETCore.App.Host.win-x86 >= 3.0.0-preview5-27626-15",
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8"
     ]
   },
   "packageFolders": {
@@ -5668,24 +5591,17 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "Microsoft.NETCore.App.Host.win-x86": {
+            "include": "None",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.0.0-preview5-27626-15, )",
+            "autoReferenced": true
+          },
           "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.0-preview3.19128.7, )",
-            "autoReferenced": true
-          },
-          "Microsoft.WindowsDesktop.App": {
-            "include": "None",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[3.0.0-preview3-27504-2, )",
-            "autoReferenced": true
-          },
-          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
-            "include": "None",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[3.0.0-preview3-27503-5, )",
+            "version": "[3.0.0-preview5.19224.8, )",
             "autoReferenced": true
           }
         },
