@@ -25,7 +25,7 @@ census['income_bracket'].unique()
 x_data = census.drop('income_bracket', axis=1)
 y_labels = census['income_bracket']
 
-X_train, X_test, y_train, y_test = train_test_split(x_data, y_labels, test_size=0.3, random_state=101)
+X_train, X_test, y_train, y_test = train_test_split(x_data, y_labels, test_size=0.2, random_state=101)
 
 # Vocabulary list
 gender = tf.feature_column.categorical_column_with_vocabulary_list("gender", ["Female", "Male"])
@@ -51,11 +51,11 @@ feat_cols = [gender, occupation, marital_status, relationship, education, workcl
 input_func = tf.estimator.inputs.pandas_input_fn(x=X_train, y=y_train, batch_size=100, num_epochs=None, shuffle=True)
 
 model = tf.estimator.LinearClassifier(feature_columns=feat_cols)
-model.train(input_fn=input_func, steps=4000)
+model.train(input_fn=input_func, steps=100)
 
 # Try the trained model "test0.csv"=Lower than 50K, so supposed to be 0. "test1.csv"=Higher than 50K, so supposed
 # to be 1.
-# test_census = pd.read_csv("test1.csv", header=None)
+# test_census = pd.read_csv("test0.csv", header=None)
 # test_census.columns = ['age', 'workclass', 'fnlwgt', 'education', 'education_num', 'marital_status',
 #                   'occupation', 'relationship', 'race', 'gender', 'capital_gain',
 #                   'capital_loss', 'hours_per_week', 'native_country']
