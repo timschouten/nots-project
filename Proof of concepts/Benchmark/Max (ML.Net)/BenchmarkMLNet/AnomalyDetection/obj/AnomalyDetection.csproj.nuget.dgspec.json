@@ -53,24 +53,17 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Microsoft.NETCore.App.Host.win-x86": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview5-27626-15, )",
+              "autoReferenced": true
+            },
             "Microsoft.NETCore.Platforms": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview3.19128.7, )",
-              "autoReferenced": true
-            },
-            "Microsoft.WindowsDesktop.App": {
-              "include": "None",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview3-27504-2, )",
-              "autoReferenced": true
-            },
-            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
-              "include": "None",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview3-27503-5, )",
+              "version": "[3.0.0-preview5.19224.8, )",
               "autoReferenced": true
             }
           },

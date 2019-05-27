@@ -1,0 +1,12 @@
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\Data\yelp_labelled.txt
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\BenchmarkMLNet.deps.json
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\BenchmarkMLNet.runtimeconfig.json
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\BenchmarkMLNet.runtimeconfig.dev.json
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\BenchmarkMLNet.dll
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\bin\x86\Debug\netcoreapp2.0\BenchmarkMLNet.pdb
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.csprojAssemblyReference.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.csproj.CoreCompileInputs.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.AssemblyInfoInputs.cache
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.AssemblyInfo.cs
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.dll
+C:\Users\MaxSchulz\Dropbox\han\NotS\Project\BenchmarkMLNet\BenchmarkMLNet\obj\x86\Debug\netcoreapp2.0\BenchmarkMLNet.pdb
