@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -9,6 +11,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-end',
     padding: '0 8px',
     ...theme.mixins.toolbar,
+  },
+  canvas:{
+    height: "1000px",
+    width: "1000px",
   }
 }))
 
@@ -23,16 +29,22 @@ function VanillaJS() {
           Don't we all have the same problem when starting a new project.
           We already did the research for you and put every result on this website. You only need to choose what the best framework is that suits you.
         </Typography>
-      <div className={"row"}>
+      <Grid container className={classes.root} spacing={0}>
+        <Grid item xs={8}>
 
-      <div>
-        <canvas width="1000" height="1000" id="result"></canvas>
-      </div>
-      </div>
-      <button className={"btn btn-info"} onClick={() => Draw()}>Show first results</button>
-      <button className={"btn btn-info"} onClick={() => StartDrawing()}>StartLearning</button>
-      <button className={"btn btn-info"} onClick={() => Draw()}>Train</button>
-      <p id="trainIndex"></p>
+          <div className={"col-md-6 " + classes.canvas}>
+            <canvas height="1000px" width="1000px" id="result"></canvas>
+          </div>
+        </Grid>
+        <Grid item xs={2}>
+          <Button variant="contained" color="primary" onClick={() => Draw()}>Show first results</Button>
+          <Button variant="contained" color="primary" onClick={() => StartDrawing()}>StartLearning</Button>
+          <Button variant="contained" color="primary" onClick={() => Draw()}>Train</Button>
+        </Grid>
+        <Grid item xs={2}>
+          <p id="trainIndex"></p>
+        </Grid>
+      </Grid>
     </div>
   );
 }
