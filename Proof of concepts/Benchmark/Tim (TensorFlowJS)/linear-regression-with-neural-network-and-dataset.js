@@ -21,6 +21,18 @@ async function setup() {
   // Prepare the Dataset for training.
   const flattenedDataset = csvDataset
     .map(({xs, ys}) => {
+        xs = {
+          age: xs.age,
+          capital_gain: xs.capital_gain,
+          capital_loss: xs.capital_loss,
+          education_num: xs.education_num,
+          fnlwgt: xs.fnlwgt,
+          gender: xs.gender === "Male" ? 0 : 1,
+          hours_per_week: xs.hours_per_week
+        };
+
+        ys.income_bracket = ys.income_bracket == ">50K" ? 1 : 0;
+
         return {xs: Object.values(xs), ys: Object.values(ys)};
       }
     ).batch(10);
@@ -29,8 +41,8 @@ async function setup() {
   const model = tf.sequential();
 
   const hidden = tf.layers.dense({
-    units: 4,
-    inputShape: [numOfFeatures],
+    units: 10,
+    inputShape: [7],
     activation: 'linear'
   });
   model.add(hidden);
@@ -42,48 +54,20 @@ async function setup() {
   model.add(output);
 
   model.compile({
-    optimizer: tf.train.sgd(.1),
-    loss: tf.losses.absoluteDifference
+    optimizer: tf.train.sgd(0.01),
+    loss: tf.losses.meanSquaredError
   });
 
-  await flattenedDataset.forEachAsync(async e => xs = await e.xs.data());
-  await flattenedDataset.forEachAsync(async e => ys = await e.ys.data());
+ // await flattenedDataset.forEachAsync(async e => xs = await e.xs.data());
+ // await flattenedDataset.forEachAsync(async e => ys = await e.ys.data());
 
   // Fit the model using the prepared Dataset
   await model.fitDataset(flattenedDataset, {
-    epochs: 1,
+    epochs: 100,
     callbacks: {
       onEpochEnd: async (epoch, logs) => {
-          //await draw(model);
         console.log("loss:", logs.loss);
       }
     }
   });
-}
-
-async function draw(model) {
-  createCanvas(400, 400);
-  background(0);
-  stroke(255);
-  strokeWeight(8);
-
-  // draw data points
-  let x1, x2, y1, y2;
-  if(ys) {
-    for (let i = 0; i < ys.length; i++) {
-      let px = map(xs[i], 0, 1, 0, width);
-      let py = map(ys[i], 0, 1, height, 0);
-      point(px, py);
-    }
-
-    const line = await model.predict(tf.tensor([0, 1])).data();
-
-    x1 = map(0, 0, 1, 0, width);
-    x2 = map(1, 0, 1, 0, width);
-    y1 = map(line[0], 0, 1, height, 0);
-    y2 = map(line[1], 0, 1, height, 0);
-
-    strokeWeight(4);
-  }
-  line(x1, y1, x2, y2);
 }

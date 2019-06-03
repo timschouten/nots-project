@@ -6,9 +6,9 @@ async function setup() {
 
   // We want to predict the column "prijs", so we mark it as a label.
   const csvDataset = tf.data.csv(
-    'house-prices.csv', {
+    'dataset.csv', {
       columnConfigs: {
-        SalePrice: {
+        prijs: {
           isLabel: true
         }
       }
@@ -23,7 +23,7 @@ async function setup() {
     .map(({xs, ys}) => {
         return {xs: Object.values(xs), ys: Object.values(ys)};
       }
-    ).batch(1000);
+    ).batch(10);
 
   // setup model of neural network
   const model = tf.sequential();
@@ -51,7 +51,7 @@ async function setup() {
 
   // Fit the model using the prepared Dataset
   await model.fitDataset(flattenedDataset, {
-    epochs: 2,
+    epochs: 100,
     callbacks: {
       onEpochEnd: async (epoch, logs) => {
         await draw(model);
