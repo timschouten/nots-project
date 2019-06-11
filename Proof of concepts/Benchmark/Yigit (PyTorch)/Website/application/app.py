@@ -66,7 +66,7 @@ def loadData():
 def loadDataCoen():
     census = pd.read_csv("./application/data/adult-coen.csv", header=None)
     census.columns = ['age', 'workclass', 'fnlwgt', 'education', 'education_num', 'marital_status',
-                      'occupation', 'relationship', 'race', 'gender', 'capital_gain',
+                      'occupation', 'relationship', 'race', 'sex', 'capital_gain',
                       'capital_loss', 'hours_per_week', 'native_country', 'income_bracket']
 
     def label_fix(label):
@@ -84,13 +84,12 @@ def loadDataCoen():
     X_train, X_test, y_train, y_test = train_test_split(x_data, y_labels, test_size=0.2, random_state=101)
 
     # Vocabulary list
-    gender = tf.feature_column.categorical_column_with_vocabulary_list("gender", ["Female", "Male"])
+    sex = tf.feature_column.categorical_column_with_vocabulary_list("sex", ["Female", "Male"])
 
     # Hash bucket
     occupation = tf.feature_column.categorical_column_with_hash_bucket("occupation", hash_bucket_size=1000)
     marital_status = tf.feature_column.categorical_column_with_hash_bucket("marital_status", hash_bucket_size=1000)
     relationship = tf.feature_column.categorical_column_with_hash_bucket("relationship", hash_bucket_size=1000)
-    education = tf.feature_column.categorical_column_with_hash_bucket("education", hash_bucket_size=1000)
     workclass = tf.feature_column.categorical_column_with_hash_bucket("workclass", hash_bucket_size=1000)
     native_country = tf.feature_column.categorical_column_with_hash_bucket("native_country", hash_bucket_size=1000)
 
@@ -101,7 +100,7 @@ def loadDataCoen():
     capital_loss = tf.feature_column.numeric_column("capital_loss")
     hours_per_week = tf.feature_column.numeric_column("hours_per_week")
 
-    feat_cols = [gender, occupation, marital_status, relationship, education, workclass, native_country, age,
+    feat_cols = [sex, occupation, marital_status, relationship, workclass, native_country, age,
                  education_num,
                  capital_gain, capital_loss, hours_per_week]
 
@@ -205,13 +204,15 @@ def train_model_coen():
 
     input_func = tf.estimator.inputs.pandas_input_fn(x=X_train, y=y_train, batch_size=100, num_epochs=None,
                                                      shuffle=True)
-    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./data/adult_model")
+
+    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./adult_model")
+    print(model)
     model.train(input_fn=input_func, steps=5000)
     return jsonify({'success': True})
 
 
 @app.route("/api/tensorflow/test/model", methods=["GET"])
-def test_model():
+def test_model_coen():
     X_train, X_test, y_train, y_test, feat_cols = loadDataCoen()
 
     model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./data/adult_model")
@@ -227,18 +228,17 @@ def test_model():
 
 
 @app.route("/api/tensorflow/predict", methods=["POST"])
-def predict():
+def predict_coen():
     incoming = request.get_json()
-    values = {'age': [incoming['age']], 'workclass': [incoming['workclass']],
-              'education': [incoming['education']],
-              'education_num': [incoming['education_num']], 'marital_status': [incoming['marital_status']],
+    values = {'age': [float(incoming['age'])], 'workclass': [incoming['workclass']],
+              'education_num': [float(incoming['education_num'])], 'marital_status': [incoming['marital_status']],
               'occupation': [incoming['occupation']], 'relationship': [incoming['relationship']],
-              'gender': [incoming['gender']], 'capital_gain': [incoming['capital_gain']],
-              'capital_loss': [incoming['capital_loss']],
-              'hours_per_week': [incoming['hours_per_week']], 'native_country': [incoming['native_country']], }
+              'sex': [incoming['sex']], 'capital_gain': [float(incoming['capital_gain'])],
+              'capital_loss': [float(incoming['capital_loss'])],
+              'hours_per_week': [float(incoming['hours_per_week'])], 'native_country': [incoming['native_country']], }
 
-    columns = ['age', 'workclass', 'education', 'education_num', 'marital_status',
-               'occupation', 'relationship', 'gender', 'capital_gain',
+    columns = ['age', 'workclass', 'education_num', 'marital_status',
+               'occupation', 'relationship', 'sex', 'capital_gain',
                'capital_loss', 'hours_per_week', 'native_country']
 
     test_census = pd.DataFrame(values, columns=columns)
@@ -247,7 +247,7 @@ def predict():
 
     test_pred_fn = tf.estimator.inputs.pandas_input_fn(x=test_census, batch_size=len(test_census), shuffle=False)
 
-    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./models/adult_model")
+    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./adult_model")
 
     predictions = list(model.predict(input_fn=test_pred_fn))
     final_preds = []
@@ -303,4 +303,3 @@ def is_token_valid():
         return jsonify(token_is_valid=True)
     else:
         return jsonify(token_is_valid=False), 403
-
