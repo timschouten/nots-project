@@ -181,7 +181,7 @@ function Header() {
             <Divider />
             <List>
             {menuItems.map((item) => (
-                <Link to={item.url} className="disable-style">
+                <Link to={item.url} className="disable-style" key={item.url}>
                   <ListItem button key={item.title}>
                     <ListItemIcon>{item.icon}</ListItemIcon>
                     <ListItemText primary={item.title} />
