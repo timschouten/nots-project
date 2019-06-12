@@ -5,11 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.0.0-rc.0",
     "@material-ui/icons": "^4.0.1",
-<<<<<<< HEAD
     "@tensorflow/tfjs": "latest",
-=======
     "axios": "^0.19.0",
->>>>>>> 4a98cac6e764865a51545d21dea7bdedeb137dd2
     "clsx": "^1.0.4",
     "nodemon": "^1.19.1",
     "p5": "^0.8.0",
