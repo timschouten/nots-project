@@ -215,7 +215,7 @@ def train_model_coen():
 def test_model_coen():
     X_train, X_test, y_train, y_test, feat_cols = loadDataCoen()
 
-    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./data/adult_model")
+    model = tf.estimator.LinearClassifier(feature_columns=feat_cols, model_dir="./adult_model")
 
     pred_fn = tf.estimator.inputs.pandas_input_fn(x=X_test, batch_size=len(X_test), shuffle=False)
 

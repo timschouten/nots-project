@@ -142,8 +142,8 @@ class PredictForm extends Component {
 
                         <TextField
                             label="Uren per week"
-                            value={this.state.status}
-                            onChange={this.handleStatusChange}
+                            value={this.state.hoursPerWeek}
+                            onChange={this.handleHoursChange}
                             margin="normal"
                             variant="outlined"
                             type="number"

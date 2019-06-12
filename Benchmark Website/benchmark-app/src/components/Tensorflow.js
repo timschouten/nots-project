@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Form from './FormTensorflow';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -23,6 +24,7 @@ function Tensorflow() {
           Don't we all have the same problem when starting a new project. 
           We already did the research for you and put every result on this website. You only need to choose what the best framework is that suits you.
         </Typography>
+	<Form/>
     </div>
   );
 }
