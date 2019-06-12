@@ -5,6 +5,8 @@
 * [Coen](Proof%20of%20concepts/Benchmark/Coen%20(TensorFlowJS))
 * [Tim](Proof%20of%20concepts/Benchmark/Tim%20(TensorFlowJS))
 * [Yigit](Proof%20of%20concepts/Benchmark/Yigit%20(PyTorch))
+* [Max](Proof%20of%20concepts/Benchmark/Max%20(ML.Net)/BenchmarkMLNet)
+* [Chris](https://github.com/timschouten/nots-project/blob/master/Benchmark%20Website/benchmark-app/src/components/VanillaJS.js)
 
 ### Matrix rekenen
 * [Chris](Proof%20of%20concepts/Matrix%20Calculations/Chris)

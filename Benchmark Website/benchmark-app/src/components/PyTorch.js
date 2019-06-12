@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Form from './PredictForm';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -30,10 +31,10 @@ function PyTorch() {
         
         <h2>Neural Network</h2>
         <Typography paragraph>
-            For solving this problem we made use of the non-linear neural network.<br/>
-            Our problem isn't that complex, we only need to know if someone is earning more than 50.000 dollars a year or less, so a non-linear neural network would be enough to make a prediction.
+            For solving this problem we used the linear neural network.<br/>
+            Our problem isn't that complex, we only need to know if someone is earning more than 50.000 dollars a year or less, so a linear neural network would be enough to make a prediction.
         </Typography>
-        
+        <Form/>
     </div>
   );
 }
